@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.1",
+  "description": "Portiflio exaple using jQuery and Bootsrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronFitzwilliam/roofingServices.git"
+  },
+  "author": "Cameron Fitzwilliam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CameronFitzwilliam/roofingServices/issues"
+  },
+  "homepage": "https://github.com/CameronFitzwilliam/roofingServices#readme"
+}
