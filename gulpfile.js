@@ -2,8 +2,7 @@ var gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	concat = require('gulp-concat'),
 	browserify = require('gulp-browserify'),
-	jquery = require('jquery');
-	
+	bsConfig = require("gulp-bootstrap-configurator");
 
 	var env, 
 	coffeeSources,
@@ -19,6 +18,9 @@ var javacriptSources = [
 	"components/scripts/body.js"
 	];
 
+var bootstrapConfig = "components/bootstrapConfig/config.json";
+
+
 var env = process.env.NODE_ENV || 'development';
 
 if(env==='development') {
@@ -32,7 +34,25 @@ if(env==='development') {
 gulp.task("js", function() {
 	gulp.src(javacriptSources)
 	.pipe(concat('script.js'))
-	.pipe(gulp.dest(outputDir + "js/"))
+	.pipe(browserify())
+	.pipe(gulp.dest('builds/development/js/'))
 });
 
-gulp.task('default', ['js']);
+// For CSS 
+gulp.task('make-bootstrap-css', function(){
+  return gulp.src(bootstrapConfig)
+    .pipe(bsConfig.css())
+    .pipe(gulp.dest("./assets"));
+    // It will create `bootstrap.css` in directory `assets`. 
+});
+ 
+// For JS 
+gulp.task('make-bootstrap-js', function(){
+  return gulp.src(bootstrapConfig)
+    .pipe(bsConfig.js())
+    .pipe(gulp.dest("./assets"));
+    // It will create `bootstrap.js` in directory `assets`. 
+});
+
+
+gulp.task('default', ['js', 'make-bootstrap-css', 'make-bootstrap-js']);

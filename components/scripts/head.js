@@ -1,1 +1,2 @@
-$("body").append("dkdk"); s
+var jQuery = require('jQuery');
+window.$ = jQuery;

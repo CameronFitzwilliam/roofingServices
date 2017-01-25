@@ -4,7 +4,7 @@
   "description": "Portiflio exaple using jQuery and Bootsrap",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,13 @@
   },
   "homepage": "https://github.com/CameronFitzwilliam/roofingServices#readme",
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "concat": "0.0.1-security",
     "gulp": "^3.9.1",
-    "gulp-util": "^3.0.8"
+    "gulp-bootstrap-configurator": "^0.4.0",
+    "gulp-util": "^3.0.8",
+    "gulp-webpack": "^1.5.0",
+    "jquery": "^3.1.1",
+    "webpack-stream": "^3.2.0"
   }
 }
