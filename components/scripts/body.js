@@ -1,3 +1,0 @@
-alert(")");
-
-$("body").append("ojforkkfr");

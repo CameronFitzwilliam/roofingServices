@@ -3,6 +3,10 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	browserify = require('gulp-browserify'),
 	bsConfig = require("gulp-bootstrap-configurator");
+	minify = require('gulp-minify'),
+	gulpIf = require('gulp-if'),
+	uglify = require('gulp-uglify'),
+	compass = require('gulp-compass');
 
 	var env, 
 	coffeeSources,
@@ -18,8 +22,9 @@ var javacriptSources = [
 	"components/scripts/body.js"
 	];
 
-var bootstrapConfig = "components/bootstrapConfig/config.json";
+sassSources = ['components/SASS/style.sass'];
 
+var bootstrapConfig = "components/bootstrapConfig/config.json";
 
 var env = process.env.NODE_ENV || 'development';
 
@@ -35,14 +40,33 @@ gulp.task("js", function() {
 	gulp.src(javacriptSources)
 	.pipe(concat('script.js'))
 	.pipe(browserify())
+    .pipe(minify({
+    ext:{
+	        src:'-debug.js',
+	        min:'.js'
+	    },
+	    exclude: ['tasks'],
+	    ignoreFiles: ['.combo.js', '-min.js']
+    }))
 	.pipe(gulp.dest(outputDir + 'js/'))
 });
 
-// For CSS 
+
+// compile sass to css
+gulp.task('compass', function() {
+  gulp.src(sassSources)
+    .pipe(compass({
+      sass: 'components/SASS',
+      style: sassStyle
+    }))
+    .pipe(gulp.dest(outputDir + "/css/"));
+});
+
+// For Bootstrap css 
 gulp.task('make-bootstrap-css', function(){
   return gulp.src(bootstrapConfig)
     .pipe(bsConfig.css())
-    .pipe(gulp.dest("./assets"));
+    .pipe(gulp.dest("/assets"));
     // It will create `bootstrap.css` in directory `assets`. 
 });
  
@@ -55,4 +79,5 @@ gulp.task('make-bootstrap-js', function(){
 });
 
 
-gulp.task('default', ['js', 'make-bootstrap-css', 'make-bootstrap-js']);
+
+gulp.task('default', ['js', 'make-bootstrap-css', 'make-bootstrap-js', 'compass']);
