@@ -35,7 +35,7 @@ gulp.task("js", function() {
 	gulp.src(javacriptSources)
 	.pipe(concat('script.js'))
 	.pipe(browserify())
-	.pipe(gulp.dest('builds/development/js/'))
+	.pipe(gulp.dest(outputDir + 'js/'))
 });
 
 // For CSS 
