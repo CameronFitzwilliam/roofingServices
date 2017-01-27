@@ -1,77 +1,75 @@
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</head>
-
-<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="lib/css/jquery.fancybox.scss">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<head>
 
 <body>
 
-<style>
+<nav class="navbar navbar-default navbar-custom">
 
-
-
-
-
-
-
-</style>
-
-<div class="mouse">
-	<div class="out">
-		<div class="click"></div>
-		<i class="fa fa-chevron-down arrow" aria-hidden="true"></i>
-	</div>
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="#">Photographer</a>
 </div>
 
-<div class="nav-container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xlg-12">	
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
 
-
-	<ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-
+<!-- Nav tabs -->
+<ul class="nav nav-tabs tabs-custom" role="tablist" id="bs-example-navbar-collapse-1">
+  <li role="presentation" class="active col-sx-4"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Welcome</a></li>
+  <li role="presentation" class="col-sx-4"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Portfolio</a></li>
+  <li role="presentation" class="col-sx-4"><a data-toggle="modal" data-target=".bs-example-modal-lg">Contact Me</a></li>
+</ul>
 
 </nav>
 
+
+<!-- Tab panes -->
+<div class="tab-content tab-custom">
+
+
+  <div role="tabpanel" class="tab-pane active fade in home" id="home">
+  <div class="header-banner"></div>
+
+  </div>
+
+
+  <div role="tabpanel" class="tab-pane fade in portfolio" id="profile">
+  <div class="container portfolio-container">
+
+  </div> 
 </div>
 
 
 
-
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xlg-12">	
-	<div class="header-banner"></div>
 </div>
+
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Contact Me</h4>
+      </div>
+
+       <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Send</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 
 
 

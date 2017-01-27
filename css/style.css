@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Shrikhand|Patrick+Hand");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,20 +55,62 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-html {
-  line-height: 1;
-}
-
-body {
-  background: red;
-}
-
 .header-banner {
-  background: url(img/oec1wisknpk-tanvi-malik.jpg);
+  background: url(../img/uploads/fjniqeayz4s-khurt-williams.jpg);
   background-size: cover;
   background-position: center center;
   height: 100vh;
   width: 100%;
+}
+
+.welcome-tag {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.navbar-custom {
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  background: #f1f1f1;
+}
+
+.nav {
+  position: relative;
+  margin: auto;
+}
+
+.navbar-default .navbar-brand {
+  font-family: 'Shrikhand', cursive;
+  color: #333;
+}
+
+.navbar-header {
+  background: #fff;
+}
+
+.navbar-default {
+  background-color: rgba(248, 248, 248, 0);
+  border-color: rgba(231, 231, 231, 0);
+}
+
+.navbar-custom {
+  background-color: rgba(248, 248, 248, 0);
+  border-color: rgba(231, 231, 231, 0);
+  border: 0px solid transparent;
+}
+
+.tabs-custom {
+  border-bottom: 0px solid #ddd;
+  background: #fff;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: rgba(221, 221, 221, 0);
 }
 
 .nav-container {
@@ -76,185 +119,20 @@ body {
   z-index: 1;
 }
 
-.click {
-  position: relative;
-  width: 5px;
-  height: 5px;
-  margin: auto;
-  background: #333;
-  border-radius: 100%;
-  animation: mouseDown 2s infinite;
+.portfolio-container {
+  padding-top: 14vh;
 }
 
-@keyframes mouseDown {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-  40% {
-    top: 60%;
-    opacity: 1;
-  }
-  100% {
-    top: 0%;
-    opacity: 0;
-  }
+.nav-tabs > li {
+  font-family: 'Shrikhand', cursive;
+  float: none;
+  display: inline-block;
+  *display: inline;
+  /* ie7 fix */
+  zoom: 1;
+  /* hasLayout ie7 trigger */
 }
-@-webkit-keyframes mouseDown {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-  40% {
-    top: 60%;
-    opacity: 1;
-  }
-  100% {
-    top: 0%;
-    opacity: 0;
-  }
-}
-@-moz-keyframes mouseDown {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-  40% {
-    top: 60%;
-    opacity: 1;
-  }
-  100% {
-    top: 0%;
-    opacity: 0;
-  }
-}
-@-o-keyframes mouseDown {
-  0% {
-    top: 0%;
-    opacity: 0;
-  }
-  40% {
-    top: 60%;
-    opacity: 1;
-  }
-  100% {
-    top: 0%;
-    opacity: 0;
-  }
-}
-.arrow {
-  color: #333;
-  position: absolute;
-  width: 100%;
-  top: 130%;
-  right: 0%;
+
+.nav-tabs {
   text-align: center;
-  animation: arrowOpacity 2s infinite;
-}
-
-@keyframes arrowOpacity {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-moz-keyframes arrowOpacity {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes arrowOpacity {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-o-keyframes arrowOpacity {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-.out {
-  position: fixed;
-  width: 26px;
-  height: 52px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  bottom: 10%;
-  right: 50%;
-  animation: outAnimation 2s infinite;
-  -webkit-transition: 500ms ease-out;
-  -moz-transition: 500ms ease-out;
-  -o-transition: 500ms ease-out;
-  transition: 500ms ease-out;
-  z-index: 1;
-}
-
-@keyframes outAnimation {
-  0% {
-    opacity: 0.5;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@-webkit-keyframes outAnimation {
-  0% {
-    opacity: 0.5;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@-moz-keyframes outAnimation {
-  0% {
-    opacity: 0.5;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-@-o-keyframes outAnimation {
-  0% {
-    opacity: 0.5;
-  }
-  40% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
 }

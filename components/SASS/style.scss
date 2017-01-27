@@ -1,0 +1,92 @@
+@import "compass";
+@import "compass/reset";
+@import url('https://fonts.googleapis.com/css?family=Shrikhand|Patrick+Hand');
+
+.header-banner {
+	background: url(../img/uploads/fjniqeayz4s-khurt-williams.jpg);
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+	width: 100%;
+}
+.welcome-tag {
+	position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #f1f1f1;
+    font-size: 40px;
+	font-family: 'Patrick Hand', cursive;
+}
+
+.navbar-custom {
+	position: fixed;
+    width: 100%;
+    z-index: 12;
+    background: #f1f1f1;
+}
+
+.nav {
+	position: relative;
+    margin: auto;
+}
+
+.navbar-default .navbar-brand {
+	font-family: 'Shrikhand', cursive;
+	color: #333;
+}
+.navbar-header {
+	background: #fff;
+}
+.navbar-default {
+    background-color: rgba(248, 248, 248, 0);
+    border-color: rgba(231, 231, 231, 0);
+}
+
+.navbar-custom {
+    background-color: rgba(248, 248, 248, 0);
+    border-color: rgba(231, 231, 231, 0);
+    border: 0px solid transparent;
+}
+
+.tabs-custom {
+    border-bottom: 0px solid #ddd;
+    background: #fff;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: rgba(221, 221, 221, 0);
+}
+.nav-container {
+	position: fixed;
+	top: 0%;
+	z-index: 1;
+}
+.collapse {
+}
+
+.portfolio-container {
+	padding-top: 14vh;
+}
+
+.nav-tabs > li {
+	font-family: 'Shrikhand', cursive;
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+

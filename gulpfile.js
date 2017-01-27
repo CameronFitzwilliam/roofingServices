@@ -6,29 +6,34 @@ var gulp = require('gulp'),
 	minify = require('gulp-minify'),
 	gulpIf = require('gulp-if'),
 	uglify = require('gulp-uglify'),
-	compass = require('gulp-compass');
-
+	compass = require('gulp-compass'),
+	cache = require('gulp-cache'),
+	directoryMap = require('gulp-directory-map');
+  
 	var env, 
-	coffeeSources,
 	javacriptSources,
 	sassSources,
 	htmlSources,
-	jsonSources,
 	outputDir,
 	sassStyle;
 
 var javacriptSources = [
-	"components/scripts/head.js",
-	"components/scripts/body.js"
+	"components/scripts/libraries.js",
+	"components/scripts/jquery.lazyload.js",
+	"components/scripts/body.js",
+	"components/bootstrapAssets/bootstrap.js",
+	"components/scripts/onload.js"
 	];
 
-sassSources = ['components/SASS/style.sass'];
-
+var bootstrapAssets = "components/bootstrapAssets";
+var sassSources = 'components/SASS/style.scss';
 var bootstrapConfig = "components/bootstrapConfig/config.json";
+var fancyBox = "node_modules/jquery-fancybox/source/scss/jquery.fancybox.scss";
+
 
 var env = process.env.NODE_ENV || 'development';
 
-if(env==='development') {
+if(env === 'development') {
 	outputDir = 'builds/development/';
 	sassStyle = "expanded";
 } else {
@@ -36,48 +41,58 @@ if(env==='development') {
 	sassStyle = "compressed";
 }
 
-gulp.task("js", function() {
-	gulp.src(javacriptSources)
-	.pipe(concat('script.js'))
-	.pipe(browserify())
-    .pipe(minify({
-    ext:{
-	        src:'-debug.js',
-	        min:'.js'
-	    },
-	    exclude: ['tasks'],
-	    ignoreFiles: ['.combo.js', '-min.js']
-    }))
-	.pipe(gulp.dest(outputDir + 'js/'))
+// For Bootstrap css 
+gulp.task('make-bootstrap-css', function(){
+  gulp.src(bootstrapConfig)
+    .pipe(bsConfig.css())
+    .pipe(gulp.dest(outputDir + 'lib/css'));
+     gulp.src(fancyBox)
+    .pipe(gulp.dest(outputDir + 'lib/css'));
+    // It will create `bootstrap.css` in directory `assets`. 
 });
 
 
-// compile sass to css
+
+
+// For JS 
+gulp.task('make-bootstrap-js', function(){
+  gulp.src(bootstrapConfig)
+    .pipe(bsConfig.js())
+    .pipe(gulp.dest(bootstrapAssets));
+    // It will create `bootstrap.js` in directory `assets`. 
+});
+
+// // compile sass to css
 gulp.task('compass', function() {
   gulp.src(sassSources)
     .pipe(compass({
       sass: 'components/SASS',
       style: sassStyle
     }))
-    .pipe(gulp.dest(outputDir + "/css/"));
-});
-
-// For Bootstrap css 
-gulp.task('make-bootstrap-css', function(){
-  return gulp.src(bootstrapConfig)
-    .pipe(bsConfig.css())
-    .pipe(gulp.dest("/assets"));
-    // It will create `bootstrap.css` in directory `assets`. 
+    .pipe(gulp.dest(outputDir + "css/"));
 });
  
-// For JS 
-gulp.task('make-bootstrap-js', function(){
-  return gulp.src(bootstrapConfig)
-    .pipe(bsConfig.js())
-    .pipe(gulp.dest("./assets"));
-    // It will create `bootstrap.js` in directory `assets`. 
+
+gulp.task('directory-json', function() {
+	gulp.src('builds/development/img/uploads/*.jpg')
+	.pipe(directoryMap({
+		filename: 'images.json'
+	}))
+	.pipe(gulp.dest('builds/development/js'));
+})
+
+
+gulp.task('js', function() {
+	gulp.src(javacriptSources)
+	.pipe(concat('script.js'))
+	.pipe(browserify())
+    .pipe(gulpIf(env === 'production', minify()))
+	.pipe(gulp.dest(outputDir + 'js/'))
+
 });
 
+gulp.task('clear-cache', function (done) {
+  return cache.clearAll(done);
+});
 
-
-gulp.task('default', ['js', 'make-bootstrap-css', 'make-bootstrap-js', 'compass']);
+gulp.task('default', ['js', 'make-bootstrap-css', 'make-bootstrap-js', 'compass', 'clear-cache', 'directory-json']);
