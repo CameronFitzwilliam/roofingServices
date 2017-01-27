@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 var javacriptSources = [
 	"components/scripts/libraries.js",
 	"components/scripts/jquery.lazyload.js",
-	"components/scripts/body.js",
+	"components/scripts/jquery.fancybox.js",
 	"components/bootstrapAssets/bootstrap.js",
 	"components/scripts/onload.js"
 	];
