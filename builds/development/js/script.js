@@ -3,23 +3,6 @@ var jQuery = require('jQuery');
 window.$ = jQuery;
 
 
-
-$.ajax({
-	url: 'includes/head.html',
-	type: 'GET',
-	dataType: 'html',
-})
-.done(function(data) {
-	console.log(data);
-})
-.fail(function() {
-	console.log("error");
-})
-.always(function() {
-	console.log("complete");
-});
-
-
 /*!
  * Lazy Load - jQuery plugin for lazy loading images
  *
@@ -2636,9 +2619,19 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 function load() {
+
 }
 window.onload = load;
 
+$.ajax({
+	url: 'includes/body.html',
+	type: 'GET',
+	dataType: 'html',
+})
+.done(function(data) {
+	$("#page").append(data);
+	$(".preloader").fadeOut("slow");
+});
 
 
 $('#myTabs a').click(function (e) {

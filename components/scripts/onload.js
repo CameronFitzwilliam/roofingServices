@@ -8,7 +8,8 @@ $.ajax({
 	type: 'GET',
 	dataType: 'html',
 })
-.done(function() {
+.done(function(data) {
+	$("#page").append(data);
 	$(".preloader").fadeOut("slow");
 });
 
