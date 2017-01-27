@@ -56,6 +56,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* Preloader */
+.portfolio-preloader {
+  position: fixed;
+  width: 100%;
+  height: 50vh;
+  background: #fff;
+  z-index: 1212;
+}
+
 .preloader {
   position: fixed;
   width: 100%;
@@ -123,7 +131,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: url(../img/uploads/jblynjgg5om-adam-excell.jpg);
   background-size: cover;
   background-position: center center;
-  height: 100vh;
+  height: 97vh;
   width: 100%;
 }
 
@@ -224,4 +232,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .fancybox-overlay {
   background: rgba(0, 0, 0, 0.58);
+}
+
+.min-height-thumbnail {
+  height: 190px;
+}
+
+.footer {
+  font-family: 'Shrikhand', cursive;
+  position: relative;
+  bottom: 1%;
+  color: #333;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .navbar-header {
+    background-color: #fff;
+  }
+
+  .min-height-thumbnail {
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .min-height-thumbnail {
+    height: 180px;
+  }
 }

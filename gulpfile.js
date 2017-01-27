@@ -91,8 +91,8 @@ gulp.task('js', function() {
 
 });
 
-gulp.task('clear-cache', function (done) {
-  return cache.clearAll(done);
+gulp.task('clear-cache', function () {
+	  cache.clearAll();
 });
 
 gulp.task('default', ['js', 'make-bootstrap-css', 'make-bootstrap-js', 'compass', 'clear-cache', 'directory-json']);

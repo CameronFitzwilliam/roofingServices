@@ -15,8 +15,8 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs tabs-custom col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" role="tablist" id="bs-example-navbar-collapse-1">
   <li role="presentation" class="active col-sx-4"><a href="#home" class="tab-a-custom" aria-controls="home" role="tab" data-toggle="tab">Welcome</a></li>
-  <li role="presentation" class="col-sx-4"><a href="#profile" class="tab-a-custom" aria-controls="profile" role="tab" data-toggle="tab">Portfolio</a></li>
-  <li role="presentation" class="col-sx-4"><a data-toggle="modal" class="tab-a-custom" data-target=".bs-example-modal-lg">Contact Me</a></li>
+  <li role="presentation" class="col-sx-4"><a href="#profile" class="tab-a-custom" aria-controls="profile" role="tab" data-toggle="tab"> Portfolio</a></li>
+  <li role="presentation" class="col-sx-4"><a data-toggle="modal" class="tab-a-custom" data-target=".bs-example-modal-lg"> Contact Me</a></li>
 </ul>
 
 </nav>
@@ -32,13 +32,12 @@
   </div>
 
 
-  <div role="tabpanel" class="tab-pane fade portfolio" id="profile">
+  <div role="tabpanel" class="tab-pane portfolio" id="profile">
 
 
-  <div class="container portfolio-container">
+  <div class="container">
 
-
-
+  <div class="portfolio-container"></div>
 
   </div> 
 </div>
@@ -57,9 +56,26 @@
         <h4 class="modal-title" id="gridSystemModalLabel">Contact Me</h4>
       </div>
 
-       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Send</button>
-      </div>
+	<div class="contact-form container-fluid">
+	
+	<form class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 form">
+
+	<input type="text" class="form-control" placeholder="Name">
+
+	<input type="text" class="form-control" placeholder="E-mail">
+
+	<input type="text" class="form-control" placeholder="Phone Number">
+
+	<textarea class="form-control" rows="3" placholder="your message"></textarea>
+	
+	<div class="modal-footer">
+		<button type="submit" class="btn btn-primary">Send</button>
+	</div>
+
+	</form>
+	</div>
+		
+
 
     </div>
   </div>
