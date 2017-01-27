@@ -2636,9 +2636,10 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 function load() {
-	alert("loaded");
 }
 window.onload = load;
+
+
 
 $('#myTabs a').click(function (e) {
   e.preventDefault()
@@ -2652,7 +2653,7 @@ $.getJSON( "js/images.json", function( data ) {
   });
 });
 
-    
+
 },{"jQuery":2}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.1.1

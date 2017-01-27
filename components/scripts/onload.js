@@ -1,7 +1,16 @@
 function load() {
+
 }
 window.onload = load;
 
+$.ajax({
+	url: 'includes/body.html',
+	type: 'GET',
+	dataType: 'html',
+})
+.done(function() {
+	$(".preloader").fadeOut("slow");
+});
 
 
 $('#myTabs a').click(function (e) {
